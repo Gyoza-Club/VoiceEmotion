@@ -1,8 +1,0 @@
-pyaudio関係
-
-pip uninstall pyaudio
-pip install pipwin
-pipwin install pyaudio
-
-No module named 'pocketsphinx'
-pipwin install pocketsphinx
