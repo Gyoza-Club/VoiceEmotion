@@ -15,3 +15,4 @@ def voiceRecognition():
 @app.route("/vt")
 def voiceTextualization():
     return vt.voice_t_module()
+
