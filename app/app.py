@@ -1,5 +1,4 @@
-from flask import Flask
-import asyncio
+from flask import Flask, jsonify
 import voiceRecognition as vr
 import voiceTextualization as vt
 
@@ -21,12 +20,6 @@ def voiceTextualization():
     return vt.voice_t_module()
 
 @app.route("/test")
-def voiceEAPI():
+def voicert():
     text = vt.voice_t_module()
-    loop = asyncio.get_event_loop()
-    result = loop.run_until_complete(vr.voice_r_module(text))
-    # result = vr.voice_r_module(text)
-    # emotionAnalyzers.read_text(text)
-    # loop = asyncio.get_event_loop()
-    # result = loop.run_until_complete(emotionAnalyzers.analyze(loop=loop))
-    return result
+    return jsonify(vr.voice_r_module(text))
